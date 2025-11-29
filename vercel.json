@@ -1,13 +1,11 @@
 {
-  "version": 2,
-  "builds": [
-    { "src": "index.html", "use": "@vercel/static" },
-    { "src": "allcss/**/*", "use": "@vercel/static" },
-    { "src": "assets/**/*", "use": "@vercel/static" }
-  ],
-  "routes": [
-    { "src": "/allcss/(.*)", "dest": "/allcss/$1" },
-    { "src": "/assets/(.*)", "dest": "/assets/$1" },
-    { "src": "/(.*)", "dest": "/index.html" }
+ "version": 2,
+ "cleanUrls": true,
+ "routes": [
+    { "src": "^/assets/(.*)$", "dest": "/assets/$1" },
+    { "src": "^/allcss/(.*)$", "dest": "/allcss/$1" },
+    { "src": "^/(deriv-logo\\.svg|boxicons\\.min\\.css|robots\\.txt)$", "dest": "/$1" },
+    { "src": "^/(.*)\\.html$", "dest": "/$1.html" },
+    { "src": "^/(.*)$", "dest": "/index.html" }
   ]
 }
