@@ -1,0 +1,31 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.html",
+      "use": "vercel-static"
+    },
+    {
+      "src": "allcss/**/*",
+      "use": "vercel-static"
+    },
+    {
+      "src": "assets/**/*",
+      "use": "vercel-static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/allcss/(.*)",
+      "dest": "/allcss/$1"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
